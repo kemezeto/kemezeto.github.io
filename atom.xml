@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Hellow World</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://kemezeto.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://kemezeto.github.io/"/>
   <updated>1985-10-26T08:15:00.000Z</updated>
-  <id>http://example.com/</id>
+  <id>https://kemezeto.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2022/06/07/hello-world/"/>
-    <id>http://example.com/2022/06/07/hello-world/</id>
+    <link href="https://kemezeto.github.io/2022/06/07/hello-world/"/>
+    <id>https://kemezeto.github.io/2022/06/07/hello-world/</id>
     <published>2022-06-07T02:34:15.856Z</published>
     <updated>1985-10-26T08:15:00.000Z</updated>
     

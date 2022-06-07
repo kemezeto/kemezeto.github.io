@@ -1,2 +1,4 @@
-http://example.com/2022/06/07/hello-world/
-http://example.com/
+https://kemezeto.github.io/link/index.html
+https://kemezeto.github.io/categories/index.html
+https://kemezeto.github.io/2022/06/07/hello-world/
+https://kemezeto.github.io/
