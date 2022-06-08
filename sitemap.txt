@@ -1,7 +1,9 @@
-https://kemezeto.github.io/2022/06/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E2%80%94%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/
-https://kemezeto.github.io/2022/06/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/
-https://kemezeto.github.io/link/index.html
-https://kemezeto.github.io/categories/index.html
-https://kemezeto.github.io/
-https://kemezeto.github.io/tags/Hexo-%E6%95%99%E7%A8%8B/
-https://kemezeto.github.io/categories/%E6%95%99%E7%A8%8B-Hexo/
+http://example.com/2022/06/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/
+http://example.com/2022/06/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E2%80%94%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/
+http://example.com/link/index.html
+http://example.com/categories/index.html
+http://example.com/
+http://example.com/tags/Hexo/
+http://example.com/tags/%E6%95%99%E7%A8%8B/
+http://example.com/categories/%E6%95%99%E7%A8%8B/
+http://example.com/categories/%E6%95%99%E7%A8%8B/Hexo/
