@@ -6,7 +6,7 @@
   <link href="https://kemezeto.github.io/atom.xml" rel="self"/>
   
   <link href="https://kemezeto.github.io/"/>
-  <updated>2022-06-08T04:45:56.075Z</updated>
+  <updated>2022-06-08T06:47:34.744Z</updated>
   <id>https://kemezeto.github.io/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法</title>
+    <link href="https://kemezeto.github.io/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/"/>
+    <id>https://kemezeto.github.io/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/</id>
+    <published>2022-06-08T06:31:58.329Z</published>
+    <updated>2022-06-08T06:47:34.744Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h3><p>斐波那契数列是一个满足<br>$$<br>fib(x)=<br>$$</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;算法&quot;&gt;&lt;a href=&quot;#算法&quot; class=&quot;headerlink&quot; title=&quot;算法&quot;&gt;&lt;/a&gt;算法&lt;/h2&gt;&lt;h3 id=&quot;斐波那契数列&quot;&gt;&lt;a href=&quot;#斐波那契数列&quot; class=&quot;headerlink&quot; title=&quot;斐波那契数列&quot;&gt;&lt;/a&gt;斐</summary>
+      
+    
+    
+    
+    
+    <category term="教程" scheme="https://kemezeto.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习记录</title>
+    <link href="https://kemezeto.github.io/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/"/>
+    <id>https://kemezeto.github.io/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/</id>
+    <published>2022-06-08T06:11:51.004Z</published>
+    <updated>2022-06-08T06:48:21.312Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、字符串"><a href="#一、字符串" class="headerlink" title="一、字符串"></a>一、字符串</h2><p>1.分别按全小写、全大写和首字母大写的方式对name进行格式化输出</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br></pre></td></tr></table></figure><p>2.给定一个名字name，请输出name去掉两边的空白符后的原本的内容</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(name.strip())</span><br></pre></td></tr></table></figure><h1 id="二、运算符"><a href="#二、运算符" class="headerlink" title="二、运算符"></a>二、运算符</h1><p>1.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、字符串&quot;&gt;&lt;a href=&quot;#一、字符串&quot; class=&quot;headerlink&quot; title=&quot;一、字符串&quot;&gt;&lt;/a&gt;一、字符串&lt;/h2&gt;&lt;p&gt;1.分别按全小写、全大写和首字母大写的方式对name进行格式化输出&lt;/p&gt;
+&lt;figure class=&quot;highl</summary>
+      
+    
+    
+    
+    
+    <category term="教程" scheme="https://kemezeto.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>实践论</title>
