@@ -1,37 +1,186 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>第一篇——搭建博客 | 土豆丝的博客</title><meta name="keywords" content="Hexo,教程"><meta name="author" content="土豆丝"><meta name="copyright" content="土豆丝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="搭建一个属于自己的博客！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一篇——搭建博客">
+<meta property="og:url" content="http://kemezeto.github.io/2022/06/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E2%80%94%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="土豆丝的博客">
+<meta property="og:description" content="搭建一个属于自己的博客！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://kemezeto.github.io/img/8.jpg">
+<meta property="article:published_time" content="2022-06-07T02:34:15.856Z">
+<meta property="article:modified_time" content="2022-06-11T04:12:13.335Z">
+<meta property="article:author" content="土豆丝">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kemezeto.github.io/img/8.jpg"><link rel="shortcut icon" href="/hexocode/img/favicon.png"><link rel="canonical" href="http://kemezeto.github.io/2022/06/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E2%80%94%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexocode/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hexocode/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第一篇——搭建博客',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-11 12:12:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-{% block page_class %}page-post-detail{% endblock %}
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-
-{% block content %}
-
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
-
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
-    </div>
-  </div>
-
-{% endblock %}
-
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
-
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/hexocode/atom.xml" title="土豆丝的博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/hexocode/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexocode/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/hexocode/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/hexocode/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexocode/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexocode/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/hexocode/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexocode/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexocode/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/hexocode/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/hexocode/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/hexocode/img/8.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/hexocode/">土豆丝的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexocode/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexocode/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/hexocode/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexocode/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexocode/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/hexocode/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/hexocode/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第一篇——搭建博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-07T02:34:15.856Z" title="发表于 2022-06-07 10:34:15">2022-06-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-11T04:12:13.335Z" title="更新于 2022-06-11 12:12:13">2022-06-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexocode/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexocode/categories/%E6%95%99%E7%A8%8B/Hexo/">Hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">605</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第一篇——搭建博客"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第一章（准备工作）"><a href="#第一章（准备工作）" class="headerlink" title="第一章（准备工作）"></a>第一章（准备工作）</h2><h3 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1.安装git"></a>1.安装git</h3><ul>
+<li>官网下载: <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a></li>
+<li>下载较慢请用<a target="_blank" rel="noopener" href="https://registry.npmmirror.com/binary.html?path=git-for-windows/">镜像网站</a></li>
+<li>安装后验证 <code>git -v</code> </li>
+<li>注：验证方法为右键选择 git bush here 然后输入<h3 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2.安装node.js"></a>2.安装node.js</h3></li>
+<li>官网下载: <a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js</a>  </li>
+<li>安装后验证 <code>node -v</code>  <h3 id="3-命令行安装cnpm"><a href="#3-命令行安装cnpm" class="headerlink" title="3.命令行安装cnpm"></a>3.命令行安装cnpm</h3></li>
+<li>输入：<code>npm install -g cnpm --registry==https://registry.npm.taobao.org</code>  </li>
+<li>安装后验证 <code>cnpm -v</code>  <h3 id="4-命令行安装hexo"><a href="#4-命令行安装hexo" class="headerlink" title="4.命令行安装hexo"></a>4.命令行安装hexo</h3></li>
+<li>输入：<code>cnpm install -g hexo-cli</code>  </li>
+<li>安装后验证 <code>hexo -v</code>  </li>
+</ul>
+<h2 id="第二章（配置github）"><a href="#第二章（配置github）" class="headerlink" title="第二章（配置github）"></a>第二章（配置github）</h2><h3 id="1-在github上创建仓库"><a href="#1-在github上创建仓库" class="headerlink" title="1.在github上创建仓库"></a>1.在github上创建仓库</h3><p>1.创建  </p>
+<ul>
+<li>首先你需要注册一个github账号，并且进行了邮箱验证。  </li>
+<li>点击右上角+，然后点击New repository，新建一个名为你的用户名.github.io的仓库，例：https://用户名.github.io/  </li>
+</ul>
+<p>2.配置SSH免密登录  </p>
+<ul>
+<li>找到位于电脑C:\Users\用户名\下的（.ssh）文件夹并删除  </li>
+<li>在上行地址中右键打开Git Bash Here输入命令 <code>ssh-keygen -t rsa -C 你的github邮箱地址</code> ，生成ssh密钥，输入后连敲三次回车。  </li>
+<li>打开新生成的.ssh文件夹，打开id_rsa.pub文件，复制里面的内容。  </li>
+<li>打开github主页，然后个人设置-&gt;SSH and GPG keys -&gt; New SSH key，点击粘贴，title可输入”个人博客“。  </li>
+<li>回到文件夹，右键Git Bash Here 输入 <code>ssh -T git@github.com</code> 显示：Are you sure you want to continue connecting (yes/no)? ，输入 <code>yes</code> ,显示Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access ,配置成功。  </li>
+<li>右键Git Bash Here，输入 <code>git config --global user.name &quot;你的github用户名&quot;</code> ，然后输入 <code>git config --global 你的github验证邮箱</code> 。</li>
+</ul>
+<h2 id="第三章（使用hexo搭建博客）"><a href="#第三章（使用hexo搭建博客）" class="headerlink" title="第三章（使用hexo搭建博客）"></a>第三章（使用hexo搭建博客）</h2><h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1.初始化"></a>1.初始化</h3><ul>
+<li>新建名为hexo的文件夹，牢记这个文件夹的位置，很重要  </li>
+<li>hexo文件夹下右键Git Bash Here，输入 <code>hexo init</code> 初始化  </li>
+<li>输入 <code>hexo g</code> 和 <code>hexo s</code> ,初始化完成<h3 id="2-将博客部署到github个人主页上"><a href="#2-将博客部署到github个人主页上" class="headerlink" title="2.将博客部署到github个人主页上"></a>2.将博客部署到github个人主页上</h3></li>
+<li>hexo文件夹右键Git Bash Here，输入 <code>npm install hexo-deployer-git --save</code>  </li>
+<li>打开_config.yml文件，在文件末尾下添加如下内容：<br><code>deploy:  </code><br><code>type: git</code><br><code>repository: git@github.com:github用户名/github用户名.github.io.git</code><br><code>branch: master</code>  </li>
+<li>右键Git Bash Here，输入 <code>hexo d</code> 将本地blog推送到githu仓库</li>
+<li>完成，浏览器输入<a target="_blank" rel="noopener" href="https://github用户名.github.io/%E5%89%8D%E5%BE%80%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7">https://github用户名.github.io/前往你的博客吧</a></li>
+</ul>
+<h2 id="各种bug解决方案"><a href="#各种bug解决方案" class="headerlink" title="各种bug解决方案"></a>各种bug解决方案</h2><h3 id="1-本地部署与远端出现不同"><a href="#1-本地部署与远端出现不同" class="headerlink" title="1.本地部署与远端出现不同"></a>1.本地部署与远端出现不同</h3><ul>
+<li>打开_config.yml文件，找到URL<br>改为：<br><code>url: http://kemeteto.github.io</code><br><code>root: /你的hexo文件夹</code></li>
+</ul>
+<p><img src="https://note.youdao.com/yws/api/personal/file/WEBc3b1296b94a056a2a119556b694e0669?method=download&shareKey=e5ef54e1a18913dff6c197b3bbf58130"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://kemezeto.github.io">土豆丝</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://kemezeto.github.io/2022/06/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E2%80%94%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">http://kemezeto.github.io/2022/06/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E2%80%94%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://kemezeto.github.io" target="_blank">土豆丝的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexocode/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/hexocode/tags/%E6%95%99%E7%A8%8B/">教程</a></div><div class="post_share"><div class="social-share" data-image="/hexocode/img/8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/hexocode/2022/06/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/"><img class="prev-cover" src="/hexocode/img/5.jpeg" onerror="onerror=null;src='/hexocode/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">实践论</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/hexocode/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="博客文章书写小技巧"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">博客文章书写小技巧</div></div></a></div><div><a href="/hexocode/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/" title="算法"><img class="cover" src="/hexocode/img/5.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-08</div><div class="title">算法</div></div></a></div><div><a href="/hexocode/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/" title="Python学习记录"><img class="cover" src="/hexocode/img/2.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-08</div><div class="title">Python学习记录</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/hexocode/img/avatar.png" onerror="this.onerror=null;this.src='/hexocode/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">土豆丝</div><div class="author-info__description">true</div></div><div class="card-info-data site-data is-center"><a href="/hexocode/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/hexocode/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/hexocode/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">人民万岁</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%88%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">第一章（准备工作）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85git"><span class="toc-number">1.1.</span> <span class="toc-text">1.安装git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85node-js"><span class="toc-number">1.2.</span> <span class="toc-text">2.安装node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85cnpm"><span class="toc-number">1.3.</span> <span class="toc-text">3.命令行安装cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.4.</span> <span class="toc-text">4.命令行安装hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%88%E9%85%8D%E7%BD%AEgithub%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">第二章（配置github）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8github%E4%B8%8A%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">2.1.</span> <span class="toc-text">1.在github上创建仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%88%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">第三章（使用hexo搭建博客）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">3.1.</span> <span class="toc-text">1.初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E4%B8%8A"><span class="toc-number">3.2.</span> <span class="toc-text">2.将博客部署到github个人主页上</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E7%A7%8Dbug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">4.</span> <span class="toc-text">各种bug解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E4%B8%8E%E8%BF%9C%E7%AB%AF%E5%87%BA%E7%8E%B0%E4%B8%8D%E5%90%8C"><span class="toc-number">4.1.</span> <span class="toc-text">1.本地部署与远端出现不同</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/hexocode/2022/06/11/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E5%9B%BE%E7%89%87/" title="碧蓝航线"><img src="/hexocode/img/4.jpeg" onerror="this.onerror=null;this.src='/hexocode/img/404.jpg'" alt="碧蓝航线"/></a><div class="content"><a class="title" href="/hexocode/2022/06/11/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E5%9B%BE%E7%89%87/" title="碧蓝航线">碧蓝航线</a><time datetime="2022-06-11T03:25:34.410Z" title="发表于 2022-06-11 11:25:34">2022-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexocode/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="博客文章书写小技巧"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/hexocode/img/404.jpg'" alt="博客文章书写小技巧"/></a><div class="content"><a class="title" href="/hexocode/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="博客文章书写小技巧">博客文章书写小技巧</a><time datetime="2022-06-11T02:47:15.707Z" title="发表于 2022-06-11 10:47:15">2022-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexocode/2022/06/10/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" title="虚拟机安装"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/hexocode/img/404.jpg'" alt="虚拟机安装"/></a><div class="content"><a class="title" href="/hexocode/2022/06/10/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" title="虚拟机安装">虚拟机安装</a><time datetime="2022-06-10T09:39:58.807Z" title="发表于 2022-06-10 17:39:58">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexocode/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/" title="算法"><img src="/hexocode/img/5.jpeg" onerror="this.onerror=null;this.src='/hexocode/img/404.jpg'" alt="算法"/></a><div class="content"><a class="title" href="/hexocode/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/" title="算法">算法</a><time datetime="2022-06-08T06:31:58.329Z" title="发表于 2022-06-08 14:31:58">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexocode/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/" title="Python学习记录"><img src="/hexocode/img/2.jpeg" onerror="this.onerror=null;this.src='/hexocode/img/404.jpg'" alt="Python学习记录"/></a><div class="content"><a class="title" href="/hexocode/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/" title="Python学习记录">Python学习记录</a><time datetime="2022-06-08T06:11:51.004Z" title="发表于 2022-06-08 14:11:51">2022-06-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 土豆丝</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexocode/js/utils.js"></script><script src="/hexocode/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
