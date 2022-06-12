@@ -1,260 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
-  
-  <title>博客文章书写小技巧 | 土豆丝的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="markdown文档图片位置我们知道，要在markdown文档中插入图片是一件不好处理的事情，需要我们用到![alt 属性文本](图片地址 &quot;可选标题&quot;)这行代码，经典的方法是将图片文件放于电脑的某个文件夹中，但是这种方法经过我的多次实验，不仅占用电脑的内存空间，而且不具有稳定性，很有可能哪天就找不到了或者不小心清理掉，下面介绍一种将图片文件放置于线上的方法，安全且方便。  首">
-<meta property="og:type" content="article">
-<meta property="og:title" content="博客文章书写小技巧">
-<meta property="og:url" content="http://kemezeto.github.io/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/index.html">
-<meta property="og:site_name" content="土豆丝的博客">
-<meta property="og:description" content="markdown文档图片位置我们知道，要在markdown文档中插入图片是一件不好处理的事情，需要我们用到![alt 属性文本](图片地址 &quot;可选标题&quot;)这行代码，经典的方法是将图片文件放于电脑的某个文件夹中，但是这种方法经过我的多次实验，不仅占用电脑的内存空间，而且不具有稳定性，很有可能哪天就找不到了或者不小心清理掉，下面介绍一种将图片文件放置于线上的方法，安全且方便。  首">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB4dd7fd37cf0dda3b1aec0f21cd27d861?method=download&shareKey=86268399b2a3b44fca610951a8c6783f">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEBffe147520904ecce77aa2157c4c84544?method=download&shareKey=29d315bcc525fca6425945c4dff90cee">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB0de5472b0964990c54c9cc577420f9ce?method=download&shareKey=fbf9316c197ecd8f4b47543ea1a55b48">
-<meta property="article:published_time" content="2022-06-11T02:47:15.707Z">
-<meta property="article:modified_time" content="2022-06-11T03:21:16.258Z">
-<meta property="article:author" content="土豆丝">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="教程">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/WEB4dd7fd37cf0dda3b1aec0f21cd27d861?method=download&shareKey=86268399b2a3b44fca610951a8c6783f">
-  
-    <link rel="alternate" href="/hexocode/atom.xml" title="土豆丝的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/hexocode/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/hexocode/" id="logo">土豆丝的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/hexocode/">Home</a>
-        
-          <a class="main-nav-link" href="/hexocode/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/hexocode/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kemezeto.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-博客文章书写小技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/hexocode/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="article-date">
-  <time datetime="2022-06-11T02:47:15.707Z" itemprop="datePublished">2022-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/">教程</a>►<a class="article-category-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/Hexo/">Hexo</a>
-  </div>
+{% block page_class %}page-post-detail{% endblock %}
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      博客文章书写小技巧
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="markdown文档图片位置"><a href="#markdown文档图片位置" class="headerlink" title="markdown文档图片位置"></a>markdown文档图片位置</h2><p>我们知道，要在markdown文档中插入图片是一件不好处理的事情，需要我们用到<code>![alt 属性文本](图片地址 &quot;可选标题&quot;)</code>这行代码，经典的方法是将图片文件放于电脑的某个文件夹中，但是这种方法经过我的多次实验，不仅占用电脑的内存空间，而且不具有稳定性，很有可能哪天就找不到了或者不小心清理掉，下面介绍一种将图片文件放置于线上的方法，安全且方便。</p>
-<ol>
-<li><p>首先，我们需要注册一个有道云笔记的账号，然后再创建一个专属于博客网站的文件夹，你也可以再对每篇博客建立一个文件夹，以便于管理，向我一样。</p>
-<img src="https://note.youdao.com/yws/api/personal/file/WEB4dd7fd37cf0dda3b1aec0f21cd27d861?method=download&shareKey=86268399b2a3b44fca610951a8c6783f" style="zoom:50%;" /></li>
-<li><p>将你要插入文章的图片拖进文件夹，然后点击分享按钮，复制链接。</p>
-<img src="https://note.youdao.com/yws/api/personal/file/WEBffe147520904ecce77aa2157c4c84544?method=download&shareKey=29d315bcc525fca6425945c4dff90cee" style="zoom:50%;" /></li>
-<li><p>打开搜索栏，将复制好的链接粘贴进去，出现一张图片，右键点击复制图像链接，粘贴进代码内即可。<img src="https://note.youdao.com/yws/api/personal/file/WEB0de5472b0964990c54c9cc577420f9ce?method=download&shareKey=fbf9316c197ecd8f4b47543ea1a55b48" style="zoom: 67%;" /></p>
-</li>
-</ol>
+{% block content %}
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kemezeto.github.io/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/" data-id="cl49a25sa000dx0uggws81qos" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexocode/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexocode/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/hexocode/2022/06/11/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E5%9B%BE%E7%89%87/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          碧蓝航线
-        
-      </div>
-    </a>
-  
-  
-    <a href="/hexocode/2022/06/10/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">虚拟机安装</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/">教程</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/Python/">Python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E9%98%85%E8%AF%BB/">阅读</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E9%98%85%E8%AF%BB/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86/">毛泽东选集</a></li></ul></li></ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/Pyhton/" rel="tag">Pyhton</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/%E8%AF%BB%E6%AF%9B%E9%80%89/" rel="tag">读毛选</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/hexocode/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/hexocode/tags/Pyhton/" style="font-size: 10px;">Pyhton</a> <a href="/hexocode/tags/%E6%95%99%E7%A8%8B/" style="font-size: 20px;">教程</a> <a href="/hexocode/tags/%E8%AF%BB%E6%AF%9B%E9%80%89/" style="font-size: 10px;">读毛选</a> <a href="/hexocode/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexocode/archives/2022/06/">六月 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/hexocode/2022/06/11/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E5%9B%BE%E7%89%87/">碧蓝航线</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/">博客文章书写小技巧</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/10/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/">虚拟机安装</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/">算法</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/">Python学习记录</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 土豆丝<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/hexocode/" class="mobile-nav-link">Home</a>
-  
-    <a href="/hexocode/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/hexocode/fancybox/jquery.fancybox.css">
-
-  
-<script src="/hexocode/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/hexocode/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

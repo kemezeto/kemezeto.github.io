@@ -1,264 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
-  
-  <title>Python学习记录 | 土豆丝的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、字符串 分别按全小写、全大写和首字母大写的方式对name进行格式化输出 1234name &#x3D; input()print(name.lower())print(name.upper())print(name.title()) 给定一个名字name，请输出name去掉两边的空白符后的原本的内容 12name &#x3D; input()print(name.strip()) split语法：通过指定分隔符将">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python学习记录">
-<meta property="og:url" content="http://kemezeto.github.io/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/index.html">
-<meta property="og:site_name" content="土豆丝的博客">
-<meta property="og:description" content="一、字符串 分别按全小写、全大写和首字母大写的方式对name进行格式化输出 1234name &#x3D; input()print(name.lower())print(name.upper())print(name.title()) 给定一个名字name，请输出name去掉两边的空白符后的原本的内容 12name &#x3D; input()print(name.strip()) split语法：通过指定分隔符将">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-08T06:11:51.004Z">
-<meta property="article:modified_time" content="2022-06-11T02:10:23.770Z">
-<meta property="article:author" content="土豆丝">
-<meta property="article:tag" content="教程">
-<meta property="article:tag" content="Pyhton">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/hexocode/atom.xml" title="土豆丝的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/hexocode/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/hexocode/" id="logo">土豆丝的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/hexocode/">Home</a>
-        
-          <a class="main-nav-link" href="/hexocode/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/hexocode/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kemezeto.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-第二篇—python记录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/hexocode/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/" class="article-date">
-  <time datetime="2022-06-08T06:11:51.004Z" itemprop="datePublished">2022-06-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/">教程</a>►<a class="article-category-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/Python/">Python</a>
-  </div>
+{% block page_class %}page-post-detail{% endblock %}
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Python学习记录
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、字符串"><a href="#一、字符串" class="headerlink" title="一、字符串"></a>一、字符串</h2><ol>
-<li><p>分别按全小写、全大写和首字母大写的方式对name进行格式化输出</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br></pre></td></tr></table></figure></li>
-<li><p>给定一个名字name，请输出name去掉两边的空白符后的原本的内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(name.strip())</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>split</strong>语法：通过指定分隔符将字符串分割</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">u=<span class="string">&quot;www.baidu.com&quot;</span></span><br><span class="line"><span class="built_in">print</span>(u.split(<span class="string">&#x27;.&#x27;</span>))--&gt;[<span class="string">&quot;www&quot;</span>,<span class="string">&quot;baidu&quot;</span>,<span class="string">&quot;com&quot;</span>]</span><br></pre></td></tr></table></figure></li>
-<li><p>**str.join(item)**的用法：将item中的每个成员以字符串str分割开再组成字符串</p>
-</li>
-</ol>
-<h1 id="二、运算符"><a href="#二、运算符" class="headerlink" title="二、运算符"></a>二、运算符</h1><h1 id="三、函数"><a href="#三、函数" class="headerlink" title="三、函数"></a>三、函数</h1><ol>
-<li><p><strong>map（）函数</strong>会根据提供的函数对指定序列做映射。第一个参数 function 以参数序列中的每一个元素调用 function 函数，返回包含每次 function 函数返回值的新列表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(function, iterable, ...)</span><br><span class="line">例：</span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))</span><br><span class="line">输出：[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>range（）</strong>函数，常用于for循环</p>
-<p>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;<br>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5<br>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">range</span>(start, stop[, step])</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">range</span>(<span class="number">10</span>)        <span class="comment"># 从 0 开始到 9</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">1</span>, <span class="number">11</span>)     <span class="comment"># 从 1 开始到 10</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">0</span>, <span class="number">30</span>, <span class="number">5</span>)  <span class="comment"># 步长为 5</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">0</span>, <span class="number">10</span>, <span class="number">3</span>)  <span class="comment"># 步长为 3</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">0</span>, -<span class="number">10</span>, -<span class="number">1</span>) <span class="comment"># 负数</span></span><br><span class="line">[<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>, -<span class="number">4</span>, -<span class="number">5</span>, -<span class="number">6</span>, -<span class="number">7</span>, -<span class="number">8</span>, -<span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">0</span>)</span><br><span class="line">[]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">[]</span><br></pre></td></tr></table></figure></li>
-</ol>
+{% block content %}
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kemezeto.github.io/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/" data-id="cl457ugml00004sug2azcblo0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexocode/tags/Pyhton/" rel="tag">Pyhton</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexocode/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/hexocode/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          算法
-        
-      </div>
-    </a>
-  
-  
-    <a href="/hexocode/2022/06/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">实践论</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/">教程</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E6%95%99%E7%A8%8B/Python/">Python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E9%98%85%E8%AF%BB/">阅读</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/hexocode/categories/%E9%98%85%E8%AF%BB/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86/">毛泽东选集</a></li></ul></li></ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/Pyhton/" rel="tag">Pyhton</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/%E8%AF%BB%E6%AF%9B%E9%80%89/" rel="tag">读毛选</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexocode/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/hexocode/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/hexocode/tags/Pyhton/" style="font-size: 10px;">Pyhton</a> <a href="/hexocode/tags/%E6%95%99%E7%A8%8B/" style="font-size: 20px;">教程</a> <a href="/hexocode/tags/%E8%AF%BB%E6%AF%9B%E9%80%89/" style="font-size: 10px;">读毛选</a> <a href="/hexocode/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexocode/archives/2022/06/">六月 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/hexocode/2022/06/11/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E5%9B%BE%E7%89%87/">碧蓝航线</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B9%A6%E5%86%99%E5%B0%8F%E6%8A%80%E5%B7%A7/">博客文章书写小技巧</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/10/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/">虚拟机安装</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/08/%E7%AC%AC%E4%B8%89%E7%AF%87%E2%80%94%E7%AE%97%E6%B3%95/">算法</a>
-          </li>
-        
-          <li>
-            <a href="/hexocode/2022/06/08/%E7%AC%AC%E4%BA%8C%E7%AF%87%E2%80%94python%E8%AE%B0%E5%BD%95/">Python学习记录</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 土豆丝<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/hexocode/" class="mobile-nav-link">Home</a>
-  
-    <a href="/hexocode/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/hexocode/fancybox/jquery.fancybox.css">
-
-  
-<script src="/hexocode/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/hexocode/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
